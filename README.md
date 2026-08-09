@@ -97,7 +97,7 @@ Tour progress can be saved locally and restored when continuing work on the same
 ## Project Structure
 
 ```text
-tour-planning-system/
+audit-tour-manager/
 │
 ├── app.py
 ├── services/
@@ -112,6 +112,7 @@ tour-planning-system/
 ├── screenshots/
 ├── requirements.txt
 └── README.md
+```
 
 ## Screenshots
 
