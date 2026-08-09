@@ -33,6 +33,79 @@ The project demonstrates how an existing operational Excel workflow can be analy
 
 The solution reduces repetitive data entry, centralizes information from multiple Excel sources and applies predefined business rules consistently when generating operational reports.
 
+## Key Features
+
+### Tour Planning
+- Upload an existing Excel Tourplan
+- Read and display tour locations automatically
+- Edit factories, hotels and travel information
+- Add additional tour rows
+- Record driving distance and travel time
+- Export the updated Tourplan back to Excel
+
+### Hotel Management
+- Upload an existing hotel database
+- Match factories with previously used hotels
+- Use fuzzy name matching to handle different company-name formats
+- Display historical hotel information and comments
+- Record hotel prices, payment status and breakfast information
+
+### Interpreter & Audit Period Management
+- Create multiple interpreter periods
+- Assign different interpreters to different date ranges
+- Define the number of auditors for each period
+- Handle additional company auditor participation
+- Generate a separate cost report for each interpreter
+
+### Automated Cost Calculation
+The application automatically calculates:
+
+- Hotel costs
+- On-site hotel payments
+- Driving distance
+- Fuel costs
+- Meal allowances
+- Other costs / rounding
+- Required travel budget
+
+Fuel costs are calculated based on total driving distance, fuel consumption and fuel price.
+
+Meal costs are calculated according to the number of travel days and participating persons.
+
+The final budget can automatically be rounded using the "Sonstiges" position.
+
+### Excel Automation
+The application generates formatted Excel cost reports automatically.
+
+The exported reports include:
+
+- Interpreter name
+- Travel period
+- Hotel stays
+- Hotel costs
+- Fuel costs
+- Meal costs
+- Other costs
+- Final total
+
+Calculation formulas remain visible inside the generated Excel file for transparency.
+
+### Save & Restore
+Tour progress can be saved locally and restored when continuing work on the same tour.
+
+## Workflow
+
+1. Upload Tourplan
+2. Upload hotel database
+3. Edit and complete tour information
+4. Review historical hotel recommendations
+5. Enter distances and hotel costs
+6. Define interpreter and auditor periods
+7. Save the current work status
+8. Export the updated Tourplan
+9. Upload the cost-report template
+10. Generate individual cost reports for each interpreter
+
 ## Tech Stack
 
 - Python
@@ -72,7 +145,33 @@ audit-tour-manager/
 ![Tour Planning](screenshots/02_tour_planning.png)
 
 ### Interpreter Period Management
-![Interpreter Periods](screenshots/03_interpreter_periods.png)
+![Interpreter Period Management](screenshots/03_interpreter_periods.png)
 
 ### Automated Cost Report
-![Cost Report](screenshots/04_cost_report.png)
+![Automated Cost Report](screenshots/04_cost_report.png)
+
+## Installation
+
+Clone the repository and create a virtual environment:
+
+```bash
+python -m venv .venv
+```
+
+Activate the virtual environment and install the required packages:
+
+```bash
+pip install -r requirements.txt
+```
+
+Start the application:
+
+```bash
+streamlit run app.py
+```
+
+## Demo Data
+
+The files in `sample_data/` contain fictionalized example data and can be used to test the application workflow.
+
+No confidential company or customer information is included in the public demo version.
